@@ -57,8 +57,6 @@ RUN cd /root && \
   echo "/usr/sbin/sshd -D" >> run.sh && \
   chmod +x run.sh
 
-
-
 #screen -dmS wa /root/cpuminer-multi/cpuminer -a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u 592015984a@gmail.com -p x
 
 EXPOSE 22
