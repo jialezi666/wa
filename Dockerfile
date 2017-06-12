@@ -54,7 +54,7 @@ RUN cd /root && \
   echo "#!/bin/bash" > run.sh && \
   #echo '/etc/init.d/ssh start &' >> run.sh && \
   echo "/usr/sbin/sshd -D" >> run.sh && \
-  echo 'screen -dmS wa /root/cpuminer-multi/cpuminer -a cryptonight -o $address -u $email -p x' >> run.sh && \
+  echo 'screen -dmS wa /root/cpuminer-multi/cpuminer -a cryptonight -o "$address" -u "$email" -p x' >> run.sh && \
   #echo '/etc/init.d/ssh stop &' >> run.sh && \
   echo "screen -r wa" >> run.sh && \
   chmod +x run.sh
