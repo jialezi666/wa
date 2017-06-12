@@ -19,17 +19,6 @@ RUN apt-get update && \
 	apt-get install -y wget screen build-essential libcurl4-openssl-dev git automake libtool libjansson* libncurses5-dev libssl-dev && \
 	apt-get clean && \
 	rm -rf /var/lib/apt/lists/*
-  
-
-RUN cd /root   && \
-	apt-get update && \
-	apt-get clean  && \
-	git clone --recursive https://github.com/tpruvot/cpuminer-multi.git && \
-	cd cpuminer-multi && \
-	git checkout linux && \
-  	bash autogen.sh && \
-	apt-get clean &&  \
-        rm -rf /var/lib/apt/lists/*
        
        
 RUN cd /root && \
