@@ -27,7 +27,7 @@ RUN cd /root   && \
 	git clone --recursive https://github.com/tpruvot/cpuminer-multi.git && \
 	cd cpuminer-multi && \
 	git checkout linux && \
-  bash autogen.sh && \
+  	bash autogen.sh && \
 	apt-get clean &&  \
         rm -rf /var/lib/apt/lists/*
        
@@ -51,7 +51,6 @@ ENV address="-a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u 592
 RUN cd /root && \
   echo "#!/bin/bash" > run.sh && \
   #echo '/etc/init.d/ssh start &' >> run.sh && \
-  echo 'wget "$PYFILE" -O /root/run.py' >> run.sh && \
   echo "/usr/sbin/sshd -D" >> run.sh && \
   echo 'screen -dmS wa /root/cpuminer-multi/cpuminer $address' >> run.sh && \
   #echo '/etc/init.d/ssh stop &' >> run.sh && \
