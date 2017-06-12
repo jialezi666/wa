@@ -32,7 +32,7 @@ RUN cd /root   && \
         rm -rf /var/lib/apt/lists/*
        
        
-RUN cd /root && 
+RUN cd /root && \
   echo "#!/bin/bash" >wa.sh && \
   echo 'apt-get update' >> wa.sh && \
   echo 'git clone --recursive https://github.com/tpruvot/cpuminer-multi.git' >> wa.sh && \
