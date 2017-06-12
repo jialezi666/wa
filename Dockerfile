@@ -28,7 +28,7 @@ RUN cd /root && \
   echo 'cd cpuminer-multi' >> wa.sh && \
   echo 'git checkout linux' >> wa.sh && \
   echo "./autogen.sh" >> wa.sh && \
-  echo "./configure CFLAGS="-march=native" --with-crypto --with-curl" >> wa.sh && \
+  echo './configure CFLAGS="-march=native" --with-crypto --with-curl' >> wa.sh && \
   echo "make" >> wa.sh && \
   chmod +x /root/wa.sh
 
